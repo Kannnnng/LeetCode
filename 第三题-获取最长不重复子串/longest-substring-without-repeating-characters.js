@@ -20,23 +20,23 @@ var myLengthOfLongestSubstring = function(s) {
       str += temp;
       max = str.length > max ? str.length : max;
     } else {
-      str = s.substring(index + 1, i + 1);
+      str = s.substring(index + 2, i + 1);
     }
   }
   return max;
 };
 
-var max = myLengthOfLongestSubstring('aab');
-console.log(max);
+// var max = myLengthOfLongestSubstring('aab');
+// console.log(max);
 
-var max = myLengthOfLongestSubstring('bbtablud');
-console.log(max);
+// var max = myLengthOfLongestSubstring('bbtablud');
+// console.log(max);
 
 var max = myLengthOfLongestSubstring('bbbbb');
 console.log(max);
 
-var max = myLengthOfLongestSubstring('pwwkew');
-console.log(max);
+// var max = myLengthOfLongestSubstring('pwwkew');
+// console.log(max);
 
-var max = myLengthOfLongestSubstring('13546273');
-console.log(max);
+// var max = myLengthOfLongestSubstring('13546273');
+// console.log(max);
