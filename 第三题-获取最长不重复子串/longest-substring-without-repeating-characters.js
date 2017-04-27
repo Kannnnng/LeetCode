@@ -20,23 +20,39 @@ var myLengthOfLongestSubstring = function(s) {
       str += temp;
       max = str.length > max ? str.length : max;
     } else {
-      str = s.substring(index + 2, i + 1);
+      str = s.substring(s.lastIndexOf(temp, i - 1) + 1, i + 1);
     }
   }
   return max;
 };
 
-// var max = myLengthOfLongestSubstring('aab');
-// console.log(max);
+function lengthOfLongestSubstring(s) {
+  const map = {};
+  var left = 0;
 
-// var max = myLengthOfLongestSubstring('bbtablud');
-// console.log(max);
+  return s.split('').reduce((max, v, i) => {
+    left = map[v] >= left ? map[v] + 1 : left;
+    map[v] = i;
+    return Math.max(max, i - left + 1);
+  }, 0);
+}
+
+const time1 = new Date();
+
+var max = myLengthOfLongestSubstring('aab');
+console.log(max, 2);
+
+var max = myLengthOfLongestSubstring('bbtablud');
+console.log(max, 6);
 
 var max = myLengthOfLongestSubstring('bbbbb');
-console.log(max);
+console.log(max, 1);
 
-// var max = myLengthOfLongestSubstring('pwwkew');
-// console.log(max);
+var max = myLengthOfLongestSubstring('pwwkew');
+console.log(max, 3);
 
-// var max = myLengthOfLongestSubstring('13546273');
-// console.log(max);
+var max = myLengthOfLongestSubstring('13546273');
+console.log(max, 7);
+
+const time2 = new Date();
+console.log(time2 - time1 + "ms");
