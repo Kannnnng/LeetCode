@@ -26,6 +26,7 @@ var myLengthOfLongestSubstring = function(s) {
   return max;
 };
 
+/* 比较简洁的写法，但是没看懂…… */
 function lengthOfLongestSubstring(s) {
   const map = {};
   var left = 0;
